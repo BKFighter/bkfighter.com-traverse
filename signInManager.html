@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/client.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="google-signin-client_id" content="970702661600-p8jg8d23vkll59rbv5rtcsshbapa7n71.apps.googleusercontent.com">
+
+<script>
+    function signOut(){ //Signs out user
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        });
+        auth2.disconnect();
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://bkfighter.com/traverse/logout.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            console.log(xhr.responseText);
+        };
+        xhr.send();
+    }
+    
+    
+    
+    function onSignIn(googleUser){ //Signs in user with google id
+        var profile = googleUser.getBasicProfile();
+        var user_data = {"username": "", "email": "", "picLink": ""};
+        user_data.username = profile.getName();
+        user_data.email = profile.getEmail();
+        user_data.picLink = profile.getImageUrl();
+        
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://bkfighter.com/traverse/verifylogin.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            var returned = JSON.parse(JSON.parse(xhr.responseText));
+            if(returned.validId){
+                console.log('Signed in as: ' + returned.userData.username);
+                if(returned.newUser){
+                    window.location = "./profile.html?user=" + returned.userData.id;
+                }
+            }else{
+                console.log('Sign in FAILED.');
+            }
+        };
+        xhr.send('idtoken=' + id_token + '&user_data=' + encodeURI(JSON.stringify(user_data)));
+    }
+    
+    
+    
+    function getPublicData(id, fn){ //Get data of any user by id
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://bkfighter.com/traverse/getpublicdata.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            fn(JSON.parse(JSON.parse(xhr.responseText)));
+        }
+        xhr.send('id=' + id);
+    }
+    
+    
+    
+    function getUserData(fn){ //Gets user data from current user's session
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://bkfighter.com/traverse/getuserdata.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            fn(JSON.parse(xhr.responseText));
+        }
+        xhr.send();
+    }
+    
+    
+    
+    function thisUserDisplay(){ //Displays this user information
+        getUserData(function(e){
+            
+            
+            if(e.id !== false){
+                var selection = document.getElementsByClassName("this-user-username");
+                for(var i = 0; i < selection.length; i++){
+                    selection[i].innerHTML = e.username;
+                }
+                selection = document.getElementsByClassName("this-user-profile");
+                for(var i = 0; i < selection.length; i++){
+                    selection[i].src = e.picture;
+                }
+                selection = document.getElementsByClassName("this-user-profile-link");
+                for(var i = 0; i < selection.length; i++){
+                    selection[i].href = "https://bkfighter.com/traverse/profile.html?user=" + e.id;
+                }
+            }
+            
+            
+        });
+    }
+    
+    
+    
+    thisUserDisplay();
+</script>
+</head>
+</html>

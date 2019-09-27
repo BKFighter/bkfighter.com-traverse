@@ -1,0 +1,94 @@
+.nav-bar{
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    border: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFFFFF;
+    color: #CC0000;
+    padding: 0px;
+    z-index: 10;
+    box-shadow: 0px 0px 6px 6px #000000;
+}
+.nav-bar *{
+    color: #CC0000;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border: none;
+    display: inline;
+    position: relative;
+    font-size: 30px;
+}
+.full-screen{
+    left: 0px;
+    border-right: 2px solid #CC0000;
+    border-radius: 0px;
+    padding: 5px;
+    height: 100px;
+    top: 0px;
+    width: max-content;
+    display: block;
+    text-decoration: none;
+    line-height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+a.full-screen{
+    height: 90px;
+    line-height: 90px;
+}
+.full-screen:hover{
+    box-shadow: 0px 2px 2px 0px #CCCCCC;
+}
+#search-form{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    padding: 5px;
+    transform: translate(-50%, 0%);
+    width: max-content;
+}
+#search-bar{
+    border: 2px solid #CC0000;
+    border-radius: 16px 0px 0px 16px;
+    padding: 5px;
+}
+#submit-query{
+    color: #FFFFFF;
+    background-color: #CC0000;
+    margin: 0px;
+    padding: 5px;
+    border-radius: 0px 16px 16px 0px;
+    border: 2px solid #CC0000;
+}
+#search-bar:hover{
+    box-shadow: 0px 2px 2px 2px #CCCCCC;
+}
+#submit-query:hover{
+    box-shadow: 0px 2px 2px 2px #CCCCCC;
+}
+#login-box{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+#login-box a{
+    margin-left: 10px;
+    border-radius: 0px;
+    text-decoration: none;
+    box-shadow: 0px 1px 2px 0px #BBBBBB;
+    position: relative;
+    top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#login-box a:hover{
+    font-weight: normal;
+}
+.abcRioButtonIcon{
+    margin-top: 5px;
+    margin-right: 5px;
+}

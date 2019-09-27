@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!--<title>replace</title>
+<link rel="icon" href="https://bkfighter.com/images/favicon.png" type="image/png" sizes="100x100">
+<meta charset="UTF-8">
+
+<!--Stuffs for google-->
+<!--<meta name="keywords" content="BKFighter, items, shopping, commodities, trading, shops, traders, starmap, verse, traverse, Star Citizen, free" />
+<meta name="description" content="Traverse" />
+<meta name="subject" content="BKFighter, items, shopping, commodities, trading, shops, traders, starmap, verse, traverse, Star Citizen, free" />
+<meta name="language" content="EN" />
+<meta name="author" content="BKFighter" />
+<meta name="owner" content="BKFighter" />
+<meta name="url" content="bkfighter.com/traverse" />
+<meta name="identifier-URL" content="bkfighter.com/traverse" />
+<meta name="revisit-after" content="3 days" />
+
+<!--Stuffs for twitter-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@bkfighter">
+<meta name="twitter:title" content="<?php $str = file_get_contents('./items.json'); $json = json_decode($str, true); for ($i = 0; $i < sizeof($json); $i++){ if($_GET['id'] == $json[$i]['id']){ echo print_r($json[$i]['name']." - Traverse", true);}}?>">
+<meta name="twitter:description" content="<?php $str = file_get_contents('./items.json'); $json = json_decode($str, true); for ($i = 0; $i < sizeof($json); $i++){ if($_GET['id'] == $json[$i]['id']){ echo print_r($json[$i]['description'], true);}}?>">
+<meta name="twitter:image" content="https://bkfighter.com/traverse/images/items/<?php echo $_GET['id'];?>.jpg">
+
+<link rel="stylesheet" type="text/css" href="items.css">
+<link rel="stylesheet" type="text/css" href="navbar.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="shops.json"></script>
+<script src="traders.json"></script>
+<script src="chains.json"></script>
+<script src="items.json"></script>
+<script src="commodities.json"></script>
+<script src="objectTemplates.js"></script>
+    
+</head>
+
+<body>
+<?php include "navbar.html";?>
+<div id="item-info"><h2 id="item-name"></h2></div>
+<div id="services-container"></div>
+<br /><br /><br /><br /><br /><br /><p>&nbsp;</p>
+
+<script src="items.js"></script>
+<?php include "footer.html";?>
+</body>
+    
+</html>

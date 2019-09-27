@@ -1,0 +1,71 @@
+body{
+    background: url("https://bkfighter.com/images/star-background.png");
+    font-family: roboto;
+}
+#item-info{
+    width: 100%;
+    height: 200px;
+    color: #FFFFFF;
+    margin: auto;
+    top: 100px;
+    position: relative;
+    border-bottom: 4px solid #FFFFFF;
+}
+#item-name{
+    font-size: 30px;
+    text-align: center;
+    width: max-content;
+    margin: auto;
+    position: relative;
+    top: 85px;
+    background: rgba(0,0,0,0.8);
+    padding: 5px;
+    border-radius: 8px;
+}
+#services-container{
+    display: flex;
+    flex-flow: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: 105px;
+}
+.search-results-link{
+    margin: auto;
+    margin-bottom: 10px;
+    position: relative;
+}
+.shops{
+    border: 4px solid #FFFFFF;
+    border-radius: 4px;
+    width: 250px;
+    height: 250px;
+    color: #FFFFFF;
+}
+.shops *{
+    border-radius: 4px;
+    background: rgba(0,0,0,0.8);
+}
+.shops span{
+    background: none;
+}
+.shops h2{
+    font-size: 24px;
+    width: max-content;
+    text-align: center;
+    max-width: 240px;
+    margin: auto;
+    margin-top: 5px;
+}
+.buy-low{
+    color: #00CC00;
+}
+.buy-high{
+    color: #CC0000;
+}
+.sell-high{
+    color: #00CC00;
+}
+.sell-low{
+    color: #CC0000;
+}

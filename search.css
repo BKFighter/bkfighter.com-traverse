@@ -1,0 +1,64 @@
+#results-container{
+    position: relative;
+    top: 100px;
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+}
+.objects{
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.objects:hover{
+    border-radius: 10px;
+}
+.object-name{
+    top: 5px;
+    max-width: 225px;
+    width: max-content;
+    left: 0px;
+    background: rgba(0,0,0,0.8);
+}
+.object-type{
+    display: block;
+    top: 5px;
+    background: rgba(0,0,0,0.8);
+}
+.object-description{
+    display: block;
+    bottom: 12.5px;
+    opacity: 1;
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+}
+.shops{
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    border: 4px solid #FFFFFF;
+    border-radius: 4px;
+    filter: brightness(1);
+}
+.shops:hover{
+    filter: brightness(1);
+}
+.services-name{
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 225px;
+    height: min-content;
+    overflow-y: hidden;
+    vertical-align: middle;
+    background: rgba(0,0,0,0.8);
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 4px;
+    width: max-content;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<link rel="stylesheet" type="text/css" href="trade.css">
+<link rel="stylesheet" type="text/css" href="navbar.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="shops.json"></script>
+<script src="traders.json"></script>
+<script src="chains.json"></script>
+<script src="items.json"></script>
+<script src="commodities.json"></script>
+<script src="objectTemplates.js"></script>
+    
+</head>
+
+<body>
+<?php include "navbar.html";?>
+<div id="commodity-info"><h2 id="commodity-name"></h2></div>
+<div id="services-container-buy" class="services-container"></div>
+<div id="services-container-sell" class="services-container"></div>
+
+<script src="trade.js"></script>
+<?php include "footer.html";?>
+</body>
+    
+</html>

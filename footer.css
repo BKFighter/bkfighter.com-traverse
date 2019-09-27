@@ -1,0 +1,23 @@
+#footer{
+    height: 30px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 30px;
+    background-color: #222222;
+    box-shadow: 0px -1px 1px #222222;
+    left: 0;
+}
+#footer a{
+    color: #CC0000;
+    text-decoration: underline;
+    text-decoration-color: #CC0000;
+}
+#footer a:hover{
+    font-weight: 600;
+}
