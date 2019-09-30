@@ -38,6 +38,7 @@
             var returned = JSON.parse(JSON.parse(xhr.responseText));
             if(returned.validId){
                 console.log('Signed in as: ' + returned.userData.username);
+                thisUserDisplay();
                 if(returned.newUser){
                     window.location = "./profile.html?user=" + returned.userData.id;
                 }
